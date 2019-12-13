@@ -1,0 +1,18 @@
+name: Docker Image CI
+
+on:
+  push
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file some_docker.Dockerfile --tag some_docker:$(date +%s) --tag some_docker:latest
+      
+    - name: Run built image
+      run: docker run --rm -it some_docker
