@@ -15,4 +15,4 @@ jobs:
       run: docker build . --file some_docker.Dockerfile --tag some_docker:$(date +%s) --tag some_docker:latest
       
     - name: Run built image
-      run: docker run --rm -it some_docker
+      run: docker run --rm -i some_docker
