@@ -1,5 +1,6 @@
-from some_code import run
+from some_code.some_script import run
 
 
 def test_run():
-    assert run() == 9, "Unexpected return value!"
+    """Tests the run method"""    
+    assert run() == 9, "Unexpected return value"
