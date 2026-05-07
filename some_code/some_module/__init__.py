@@ -1,1 +1,1 @@
-from .some_class import SomeClass
+from .some_class import SomeClass as SomeClass
