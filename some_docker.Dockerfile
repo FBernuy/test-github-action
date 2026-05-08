@@ -1,13 +1,12 @@
-FROM ubuntu:18.04
-
-RUN apt-get update
-RUN apt-get install --no-install-recommends --yes python3 python3-pip
-
-RUN mkdir /code
-COPY . /code/
-
-RUN pip3 install --upgrade pip
-RUN pip3 install -r /code/requirements.txt
+FROM python:3.12-slim
 
 WORKDIR /code
-CMD PYTHONPATH=$PWD python3 -m some_code.some_script
+
+COPY pyproject.toml ./
+COPY some_code/ ./some_code/
+
+RUN pip install --no-cache-dir .
+
+ENV PYTHONPATH=/code
+
+CMD ["python", "-m", "some_code.some_script"]
