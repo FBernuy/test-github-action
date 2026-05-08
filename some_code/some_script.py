@@ -1,22 +1,19 @@
 from .some_module import SomeClass
 
 
-def run():
-    """Create a SomeClass instance, set its value to 5 and
-    increments it 4 times, the returns the object value
-
-    :return: SomeClass attribute value
-    :rtype: int
+def run() -> int:
+    """Create a SomeClass instance, set its value to 5, increment it 4 times,
+    then return the final value (expected: 9).
     """
-    print('Creating SomeClass member')
+    print("Creating SomeClass instance")
     some_member = SomeClass()
-    print('Setieng value to 5')
-    some_member.set_att(5)
-    print('increasing value in 4')
+    print("Setting value to 5")
+    some_member.att = 5
+    print("Incrementing value 4 times")
     for _ in range(4):
         some_member.increment_att()
-    print('returning value')
-    return some_member.get_att()
+    print("Returning value")
+    return some_member.att
 
 
 if __name__ == "__main__":
