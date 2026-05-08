@@ -1,1 +1,3 @@
-from .some_class import SomeClass as SomeClass
+from .some_class import SomeClass
+
+__all__ = ["SomeClass"]
